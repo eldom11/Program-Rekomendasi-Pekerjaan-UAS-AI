@@ -7,8 +7,8 @@ job_data = pd.read_csv('jobs.csv')
 
 questions = [
     "Apa bidang pekerjaan yang Anda minati?",
-    "Apa keahlian yang Anda kuasai?",
-    "Apa pendidikan terakhir yang Anda tempuh?",
+    "Apa keahlian yang Anda kuasai?(Hard Skill)",
+    "Apa bidang pendidikan terakhir yang Anda tempuh?(cth: informatika)",
     "Apakah Anda memiliki pengalaman kerja sebelumnya? (Ya/Tidak)",
     "Apakah Anda memiliki sertifikasi atau pelatihan terkait? (Ya/Tidak)",
     "Berapa tingkat kesediaan Anda untuk berpergian atau bekerja di luar kota? (1-5)",
