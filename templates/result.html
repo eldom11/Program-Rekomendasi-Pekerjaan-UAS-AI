@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Recommendation Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Career Recommendation Result</h1>
+        <div class="result">
+            {% for i, job in recommended_jobs.head(2).iterrows() %}
+                <p>Saya pikir pekerjaan paling cocok untuk Anda adalah <strong>{{ job['title'] }}</strong> karena {{ job['description'] }}. Alasan: {{ job['Reasons'] }}.</p>
+            {% endfor %}
+            <br>
+            <h2>All Jobs</h2>
+            <table >
+                <tr>
+                    <th><strong>Title</strong></th>
+                    <th>Score</th>
+                </tr>
+                {% for i, job in recommended_jobs.iterrows() %}
+                <tr>
+                    <td>{{ job['title'] }}</td>
+                    <td>{{ job['Score'] }}/10</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+
+        <a href="/" class="button">Back</a>
+    </div>
+</body>
+</html>

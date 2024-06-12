@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Recommendation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Career Recommendation</h1>
+        <form action="/result" method="post">
+            {% for i in range(questions|length) %}
+                <div class="question">
+                    <label for="q{{i}}">{{ questions[i] }}</label><br>
+                    <input type="text" id="q{{i}}" name="q{{i}}">
+                </div>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
